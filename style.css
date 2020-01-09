@@ -1,5 +1,6 @@
 body {
-  background-color: #504B43
+  background-color: #EFD6AC;
+  margin:0px;
 }
 /* nav bar */
 /* Add a black background color to the top navigation */
@@ -8,6 +9,9 @@ body {
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
+p {
+  padding: 0px;
+}
 
 /* Style the links inside the navigation bar */
 .topnav a {
@@ -15,9 +19,9 @@ body {
   float: left;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 /* Change the color of links on hover */
