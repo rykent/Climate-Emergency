@@ -25,16 +25,16 @@ var menuScene = new Phaser.Class({
         this.playButton = this.add.sprite(320, 200, 'play');
         this.playButton.setInteractive();
         this.playButton.on('pointerdown', function(pointer){
-            this.playButton.disableInteractive();
+            //this.playButton.disableInteractive();
             this.scene.start('pickupScene');
-        });
+        },this);
 
         this.settingsButton = this.add.sprite(320, 275, 'settings');
         this.settingsButton.setInteractive();
         this.settingsButton.on('pointerdown', function(pointer){
-            this.settingsButton.disableInteractive();
+            //this.settingsButton.disableInteractive();
             this.scene.start('settingsScene');
-        });
+        }, this);
     },
 
     update: function (time, delta) {
