@@ -4,7 +4,7 @@ var menuScene = new Phaser.Class({
 
     initialize:
 
-    function introScene(){
+    function menuScene(){
         Phaser.Scene.call(this, { key: 'menuScene'});
     },
 
@@ -13,6 +13,7 @@ var menuScene = new Phaser.Class({
         this.load.image('bg_2', 'assets/Climatebackground.png');
         this.load.image('play', 'assets/play.png');
         this.load.image('settings', 'assets/settings.png');
+        this.load.image('titlepage', 'assets/titlepage.png');
     },
 
     create: function ()
@@ -22,10 +23,14 @@ var menuScene = new Phaser.Class({
         this.background.setOrigin(0,0);
         this.background.setScale(0.65);
 
+        this.title = this.add.sprite(320, 100, 'titlepage');
+        this.title.setScale(1.1);
+
         this.playButton = this.add.sprite(320, 200, 'play');
         this.playButton.setInteractive();
         this.playButton.on('pointerdown', function(pointer){
             //this.playButton.disableInteractive();
+            isIntro = false;
             this.scene.start('pickupScene');
         },this);
 
@@ -36,8 +41,5 @@ var menuScene = new Phaser.Class({
             this.scene.start('settingsScene');
         }, this);
     },
-
-    update: function (time, delta) {
-    }
 });
 
