@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body {
-  background-color: #EFD6AC;
-  margin:0px;
+  background-color: rgb(255, 255, 255)
+
 }
 
 /* nav bar */
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #2E4600;
+  background-color: #000000;
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
@@ -14,7 +16,7 @@ p {
   padding: 0px;
 }
 
-/* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar */ /*including transition */
 .topnav a {
    font-family: 'Rubik', sans-serif;
   float: left;
@@ -22,17 +24,87 @@ p {
   text-align: center;
   padding: 16px 18px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 17px;
+  -webkit-transition: all 0.5s;
 }
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #A2C523;
+  background-color: #2BCFFF;
   color: black;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #7D4427;
+  background-color: #2BCFFF;
   color: white;
+}
+
+
+
+/* FONT - ROBOTO */ 
+
+.row {
+
+margin: auto;
+
+}
+
+.column {
+  float: left;
+  width: 23%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Some left and right padding inside the container */
+.container {
+  padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.game {
+
+  text-align: center;
+
 }

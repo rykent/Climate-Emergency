@@ -1,10 +1,10 @@
-var titleScene = new Phaser.Class({
+var infoScene = new Phaser.Class({
     Extends: Phaser.Scene,
 
     initialize:
 
-    function titleScene(){
-        Phaser.Scene.call(this, { key: 'titleScene'});
+    function infoScene(){
+        Phaser.Scene.call(this, { key: 'infoScene'});
     },
 
     preload: function ()
