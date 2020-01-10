@@ -2,13 +2,18 @@
 
 body {
   background-color: rgb(255, 255, 255)
+
 }
+
 /* nav bar */
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #000000;
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+p {
+  padding: 0px;
 }
 
 /* Style the links inside the navigation bar */ /*including transition */
@@ -17,7 +22,7 @@ body {
   float: left;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-decoration: none;
   font-size: 17px;
   -webkit-transition: all 0.5s;
