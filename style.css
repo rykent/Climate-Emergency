@@ -6,12 +6,12 @@ body {
 /* nav bar */
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #2BCFFF;
+  background-color: #000000;
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
-/* Style the links inside the navigation bar */
+/* Style the links inside the navigation bar */ /*including transition */
 .topnav a {
    font-family: 'Rubik', sans-serif;
   float: left;
@@ -20,11 +20,13 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  -webkit-transition: all 0.5s;
 }
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #A2C523;
+  background-color: #2BCFFF;
   color: black;
 }
 
@@ -98,6 +100,6 @@ margin: auto;
 
 .game {
 
-align: center;
+  text-align: center;
 
 }
