@@ -26,6 +26,7 @@ var menuScene = new Phaser.Class({
         this.playButton.setInteractive();
         this.playButton.on('pointerdown', function(pointer){
             //this.playButton.disableInteractive();
+            isIntro = false;
             this.scene.start('pickupScene');
         },this);
 
@@ -36,8 +37,5 @@ var menuScene = new Phaser.Class({
             this.scene.start('settingsScene');
         }, this);
     },
-
-    update: function (time, delta) {
-    }
 });
 
