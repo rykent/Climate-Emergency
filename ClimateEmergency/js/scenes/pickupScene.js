@@ -99,5 +99,10 @@ var pickupScene = new Phaser.Class({
              }
         }
 
+        if (win) {
+            this.scene.start('infoScene');
+
+        }
+
     }
 });

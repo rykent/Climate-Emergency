@@ -2,6 +2,7 @@
 
 body {
   background-color: rgb(255, 255, 255)
+
 }
 
 #filler {
@@ -31,6 +32,9 @@ background: url("woods_picture.jpeg");
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
+p {
+  padding: 0px;
+}
 
 /* Style the links inside the navigation bar */ /*including transition */
 .topnav a {
@@ -38,7 +42,7 @@ background: url("woods_picture.jpeg");
   float: left;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-decoration: none;
   font-size: 17px;
   -webkit-transition: all 0.5s;
@@ -89,7 +93,8 @@ margin: auto;
 
 /* Some left and right padding inside the container */
 .container {
-  padding: 0 16px;
+  padding: 16px 16px;
+  text-align: center;
 }
 
 /* Clear floats */
@@ -107,7 +112,6 @@ margin: auto;
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 8px;
   color: white;
   background-color: #000;
   text-align: center;
