@@ -31,10 +31,20 @@ var uiScene = new Phaser.Class({
 
     update: function (time, delta) {
         this.scene.bringToTop();
-
         if (!isIntro) {
+            if (start) {
+                this.startTime = time;
+                start = false;
+            }
             this.timer.visible = true;
             this.trashCounter.visible = true;
+
+            //Begin Countdown
+            timeLeft = 30 - ((time - this.startTime) / 1000);
+        }
+
+        if (timeLeft <= 0) {
+            //Game Finished
         }
 
         this.timer.setText("Time Left: " + timeLeft + 's');

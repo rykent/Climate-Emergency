@@ -3,7 +3,8 @@
 var trashArray = [];
 var trashPickedUp = 0;
 var isIntro = true;
-var timeLeft = 0;
+var timeLeft = 30;
+var start = true;
 
 let config = {
     type: Phaser.AUTO, 
