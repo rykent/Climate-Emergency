@@ -5,6 +5,26 @@ body {
 
 }
 
+#filler {
+  height: 1000px;
+}
+
+.home::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;   
+  width: 101%;   
+  height: 125%;
+background: url("woods_picture.jpeg");
+  background-size: cover;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+} 
+
 /* nav bar */
 /* Add a black background color to the top navigation */
 .topnav {
