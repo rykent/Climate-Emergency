@@ -42,4 +42,3 @@ var menuScene = new Phaser.Class({
         }, this);
     },
 });
-

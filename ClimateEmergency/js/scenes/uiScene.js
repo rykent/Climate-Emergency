@@ -40,11 +40,15 @@ var uiScene = new Phaser.Class({
             this.trashCounter.visible = true;
 
             //Begin Countdown
-            timeLeft = 30 - ((time - this.startTime) / 1000);
+            timeLeft = timeAtStart - ((time - this.startTime) / 1000);
         }
 
         if (timeLeft <= 0) {
             //Game Finished
+
+            if (trashPickedUp >= winAmount) {
+                win = true;
+            }
         }
 
         this.timer.setText("Time Left: " + timeLeft + 's');
