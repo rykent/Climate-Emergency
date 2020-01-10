@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 body {
-  background-color: #504B43
+  background-color: rgb(255, 255, 255)
 }
 /* nav bar */
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #2E4600;
+  background-color: #2BCFFF;
   overflow: hidden;
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
@@ -98,6 +98,6 @@ margin: auto;
 
 .game {
 
-margin:auto;
+align: center;
 
 }
