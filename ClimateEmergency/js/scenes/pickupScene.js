@@ -9,9 +9,9 @@ var pickupScene = new Phaser.Class({
     },
 
     placeTrash: function () {
-        for (var i = 0; i < 500; i++) {
-            trashArray.push(this.add.sprite(i * 10, 300, 'trash'));
-            trashArray[i].setScale(0.5);
+        for (var i = 0; i < 250; i++) {
+            trashArray.push(this.add.sprite(i * 40, 300, 'trash'));
+            trashArray[i].setScale(0.1);
             var random =  Math.floor(Math.random() * 2) + 1;
             trashArray[i].state = random; //1 = active, 2 = inactive  player can only pickup active objects
             if (random == 2) {
@@ -65,10 +65,16 @@ var pickupScene = new Phaser.Class({
             this.player.anims.resume();
             this.player.flipX = false;
             this.background.x -= 4;
+            for (var i = 0; i < 250; i++) {
+                trashArray[i].x -= 4;
+            }
         } else if (this.cursors.left.isDown) {
             this.player.anims.resume();
             this.player.flipX = true;
             this.background.x += 4;
+            for (var i = 0; i < 250; i++) {
+                trashArray[i].x += 4;
+            }
         } else {
             this.player.anims.pause(this.player.anims.currentAnim.frames[1]);
 
