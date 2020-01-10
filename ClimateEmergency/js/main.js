@@ -1,5 +1,7 @@
 /* Climate Emergency - A game about the effects of trash and climate change in our world.*/
 
+var trashArray = [];
+
 let config = {
     type: Phaser.AUTO, 
     width: 640,

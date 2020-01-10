@@ -3,7 +3,7 @@ var titleScene = new Phaser.Class({
 
     initialize:
 
-    function introScene(){
+    function titleScene(){
         Phaser.Scene.call(this, { key: 'titleScene'});
     },
 

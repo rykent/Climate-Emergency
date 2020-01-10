@@ -4,7 +4,7 @@ var menuScene = new Phaser.Class({
 
     initialize:
 
-    function introScene(){
+    function menuScene(){
         Phaser.Scene.call(this, { key: 'menuScene'});
     },
 
