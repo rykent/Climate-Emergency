@@ -109,7 +109,7 @@ var pickupScene = new Phaser.Class({
                         trashArray[i].state = 3; //picked up
                         trashPickedUp++;
                      } else if (trashArray[i].state == 4) {
-                        var laugh = new Audio('../assets/laugh.mp3');
+                        var laugh = new Audio('../ClimateEmergency/assets/laugh.mp3');
                         laugh.play();
                         timeAtStart -= 3;
                         trashArray[i].state = 3;
