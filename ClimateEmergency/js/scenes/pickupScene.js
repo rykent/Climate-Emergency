@@ -10,16 +10,31 @@ var pickupScene = new Phaser.Class({
 
     placeTrash: function () {
         for (var i = 0; i < 125; i++) {
-            trashArray.push(this.add.sprite((i * 40) - 2000, 300, 'trash'));
-            trashArray[i].setScale(0.1);
-            var random =  Math.floor(Math.random() * 2) + 1;
-            /*1 = active, 
+            var random =  Math.floor(Math.random() * 4) + 1;
+            /*1 = trash, 
             2 = inactive/nothing there  (player can only pickup active objects)
             3 = picked up
+            4 = salacious crumb
             */
-            trashArray[i].state = random;
-            if (random == 2) {
-                trashArray[i].visible = false;
+
+            switch (random) {
+                case 1:
+                case 2:// Case 1 & 2 are for trash
+                    trashArray.push(this.add.sprite((i * 40) - 2000, 300, 'trash'));
+                    trashArray[i].setScale(0.1);
+                    trashArray[i].state = 1
+                    break;
+                case 3: // Salacious Crumb
+                    trashArray.push(this.add.sprite((i * 40) - 2000, 300, 'crumb'));
+                    trashArray[i].setScale(0.1);
+                    trashArray[i].state = 4;
+                    break;
+                case 4:
+                    trashArray.push(this.add.sprite((i * 40) - 2000, 300, 'trash'));
+                    trashArray[i].setScale(0.1);
+                    trashArray[i].state = 2; //inactive
+                    trashArray[i].visible = false;
+                    break;
             }
         }
     },
@@ -88,10 +103,16 @@ var pickupScene = new Phaser.Class({
         if (pickupKey.isDown) {
              for (var i = 0; i < 125; i++) {
                  // check if there is a trash piece at the same spot as the player
-                 if (this.player.x == trashArray[i].x && trashArray[i].state == 1) {
-                     trashArray[i].visible = false;
-                     trashArray[i].state = 3; //picked up
-                     trashPickedUp++;
+                 if (this.player.x == trashArray[i].x) {
+                     if (trashArray[i].state == 1) {
+                        trashArray[i].visible = false;
+                        trashArray[i].state = 3; //picked up
+                        trashPickedUp++;
+                     } else if (trashArray[i].state == 4) {
+                         timeAtStart -= 3;
+                         trashArray[i].state = 3;
+                         trashArray[i].visible = false;
+                     }
                  }
              }
         }
