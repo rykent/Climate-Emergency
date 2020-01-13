@@ -26,9 +26,6 @@ var pickupScene = new Phaser.Class({
 
     preload: function ()
     {
-        this.load.image('bg_2', 'assets/Climatebackground.png');
-        this.load.spritesheet('player', 'assets/player.png', { frameWidth: 64, frameHeight: 102, endFrame: 3});
-        this.load.image('trash', 'assets/cigarette.png');
 
     },
 
@@ -99,9 +96,13 @@ var pickupScene = new Phaser.Class({
              }
         }
 
-        if (win) {
+        if (timeLeft <= 0) {
+            //Game Finished
+            if (trashPickedUp >= winAmount) {
+                //win
+                win = true;
+            }
             this.scene.start('infoScene');
-
         }
 
     }
