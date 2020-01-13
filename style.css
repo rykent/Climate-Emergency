@@ -5,16 +5,12 @@ body {
 
 }
 
-#filler {
-  height: 1000px;
-}
-
 .home::after {
   content: "";
   display: block;
   position: absolute;
   z-index: -1;   
-  width: 101%;   
+  width: 100%;   
   height: 125%;
 background: url("woods_picture.jpeg");
   background-size: cover;
@@ -73,7 +69,7 @@ margin: auto;
 
 .column {
   float: left;
-  width: 23%;
+  width: 18%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -126,5 +122,13 @@ margin: auto;
 .game {
 
   text-align: center;
+
+}
+
+.anythingreally {  
+
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+
 
 }

@@ -3,6 +3,7 @@
 var trashArray = [];
 var trashPickedUp = 0;
 var isIntro = true;
+var isInfo = false;
 var timeAtStart = 30;
 var timeLeft = 30;
 var start = true;
@@ -13,7 +14,7 @@ let config = {
     type: Phaser.AUTO, 
     width: 640,
     height: 360,
-    scene: [titleScene, menuScene, pickupScene, settingsScene, uiScene]
+    scene: [titleScene, menuScene, pickupScene, settingsScene, uiScene, infoScene]
 };
 
 let game = new Phaser.Game(config);
