@@ -10,10 +10,6 @@ var menuScene = new Phaser.Class({
 
     preload: function ()
     {
-        this.load.image('bg_2', 'assets/Climatebackground.png');
-        this.load.image('play', 'assets/play.png');
-        this.load.image('settings', 'assets/settings.png');
-        this.load.image('titlepage', 'assets/titlepage.png');
     },
 
     create: function ()

@@ -10,6 +10,13 @@ var titleScene = new Phaser.Class({
     preload: function ()
     {
         this.load.image('title', 'assets/title.png');
+        this.load.spritesheet('player', 'assets/player.png', { frameWidth: 64, frameHeight: 102, endFrame: 3});
+        this.load.image('trash', 'assets/cigarette.png');
+        this.load.image('play', 'assets/play.png');
+        this.load.image('settings', 'assets/settings.png');
+        this.load.image('titlepage', 'assets/titlepage.png');
+        this.load.image('fire', 'assets/firebackground.png');
+        this.load.image('bg_2', 'assets/Climatebackground.png');
     },
 
     create: function ()

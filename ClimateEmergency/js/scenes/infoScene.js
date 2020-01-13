@@ -9,22 +9,23 @@ var infoScene = new Phaser.Class({
 
     preload: function ()
     {
-        this.load.image('title', 'assets/title.png');
+        
     },
 
     create: function ()
     {
-        this.intro = this.add.sprite(0,0, 'title');
-        this.intro.setOrigin(0,0);
-        this.intro.setScale(0.8);
-        //make the intro interactive
-        this.intro.setInteractive();
+        if (win) {
+            this.background = this.add.sprite(-2000,0, 'bg_2')
+        } else {
+            this.background = this.add.sprite(-2000,0, 'fire');
+        }
+        this.background.setOrigin(0,0);
+        this.background.setScale(0.65);
 
-        this.intro.on('pointerdown', function (pointer) {
-            this.intro.visible = false;
-            this.intro.disableInteractive();
-            //isIntro = false;
-            this.scene.start('menuScene');
-        }, this);
+    },
+
+    update: function ()
+    {
+
     }
 });
