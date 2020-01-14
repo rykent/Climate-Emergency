@@ -28,9 +28,12 @@ var infoScene = new Phaser.Class({
 
         this.info = this.add.sprite(320,150, 'info');
         this.info.visible = false;
-        this.again = this.add.sprite(320, 300, 'again');
+        
+        this.again = this.add.sprite(200, 300, 'again');
         this.again.visible = false;
-        this.again.setInteractive();
+        
+        this.menu = this.add.sprite(450, 300, 'menu');
+        this.menu.visible = false;
         
         this.again.on('pointerdown', function(pointer){
             win = false;
@@ -38,15 +41,17 @@ var infoScene = new Phaser.Class({
             switch (dif) {
                 case 1:
                     timeAtStart = 35;
+                    winAmount = 30;
                     break;
                 case 2:
                     timeAtStart = 40;
+                    winAmount = 45;
                     break;
                 case 3:
                     timeAtStart = 35;
+                    winAmount = 60;
                     break;
             }
-            winAmount = 30;
             isInfo = false;
             isIntro = false;
             trashPickedUp = 0;
@@ -55,10 +60,37 @@ var infoScene = new Phaser.Class({
             this.scene.start('pickupScene');
         }, this);
 
+        this.menu.on('pointerdown', function(pointer){
+            switch (dif) {
+                case 1:
+                    timeAtStart = 35;
+                    winAmount = 30;
+                    break;
+                case 2:
+                    timeAtStart = 40;
+                    winAmount = 45;
+                    break;
+                case 3:
+                    timeAtStart = 35;
+                    winAmount = 60;
+                    break;
+            }
+            isInfo = false;
+            isIntro = true;
+            start = true;
+            trashArray = [];
+            timeLeft = 30;
+            trashPickedUp = 0;
+            this.scene.start('menuScene');
+        }, this);
+        
         this.input.on('pointerdown', function(pointer) {
             this.winlose.visible = false;
+            this.menu.setInteractive();
+            this.again.setInteractive();
             this.info.visible = true;
             this.again.visible = true;
+            this.menu.visible = true;
         }, this);
     },
 

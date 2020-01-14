@@ -23,6 +23,8 @@ var titleScene = new Phaser.Class({
         this.load.image('lose', 'assets/lose.png');
         this.load.image('crumb', 'assets/crumb.png');
         this.load.spritesheet('red', 'assets/player1red.png', { frameWidth: 64, frameHeight: 102, endFrame: 3});
+        this.load.image('again', 'assets/again.png');
+        this.load.image('menu', 'assets/menu.png');
     },
 
     create: function ()
