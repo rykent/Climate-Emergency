@@ -42,6 +42,7 @@ var pickupScene = new Phaser.Class({
     preload: function ()
     {
 
+
     },
 
     create: function ()
@@ -57,26 +58,54 @@ var pickupScene = new Phaser.Class({
         var playerConfig = {
             key: 'walk',
             frames: this.anims.generateFrameNumbers('player', { start: 0, end: 3, first: 0}),
-            repeat: -1,
+            repeat:-1,
             frameRate: 7
             
         };
 
+
         this.anims.create(playerConfig);
+
+        this.smile = this.add.sprite(320,100, 'smile');
+        this.smile.setScale(2);
+        this.smile.visible = false;
 
 
         this.player = this.add.sprite(320, 280, 'player');
         this.player.setScale(0.8);
         //this.player.visible = false;
         this.player.anims.play('walk');
+       
+
+        /*this.red = this.add.sprite(320, 280, 'player1red');
+        this.red.setScale(0.8);
+        this.red.visible = false;*/
+
 
         this.cursors = this.input.keyboard.createCursorKeys();
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+        hiddenKey2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
 
     },
 
     update: function (time, delta) {
+
+      if(hiddenKey.isDown && hiddenKey2.isDown) {
+
+           this.smile.visible = true;
+           var democracy = new Audio('../ClimateEmergency/assets/smile.mp3');
+                        democracy.play();
+           
+    }
+
+       if(this.cursors.up.isDown) {
+
+        this.player.setTexture('red');
+
+        }
+
         if(this.cursors.right.isDown) {
             this.player.anims.resume();
             this.player.flipX = false;
@@ -109,9 +138,11 @@ var pickupScene = new Phaser.Class({
                         trashArray[i].state = 3; //picked up
                         trashPickedUp++;
                      } else if (trashArray[i].state == 4) {
-                         timeAtStart -= 3;
-                         trashArray[i].state = 3;
-                         trashArray[i].visible = false;
+                        var laugh = new Audio('../ClimateEmergency/assets/laugh.mp3');
+                        laugh.play();
+                        timeAtStart -= 3;
+                        trashArray[i].state = 3;
+                        trashArray[i].visible = false;
                      }
                  }
              }

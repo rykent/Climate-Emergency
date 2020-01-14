@@ -9,6 +9,7 @@ var timeLeft = 30;
 var start = true;
 var winAmount = 30;
 var win = false;
+var dif = 1;
 
 let config = {
     type: Phaser.AUTO, 
