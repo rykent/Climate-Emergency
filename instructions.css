@@ -1,6 +1,14 @@
 .instructionsp {
-
+font-family: 'Rubik', sans-serif;
 text-align: center;
+font-size: 19px;
+
+}
 
 
+#spacebar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
