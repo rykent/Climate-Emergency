@@ -80,7 +80,7 @@ var pickupScene = new Phaser.Class({
         this.cursors = this.input.keyboard.createCursorKeys();
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-        hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.One);
+        hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
 
     },
 
