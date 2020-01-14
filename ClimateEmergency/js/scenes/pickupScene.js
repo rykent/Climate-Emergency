@@ -58,7 +58,7 @@ var pickupScene = new Phaser.Class({
         var playerConfig = {
             key: 'walk',
             frames: this.anims.generateFrameNumbers('player', { start: 0, end: 3, first: 0}),
-            repeat:10,
+            repeat:-1,
             frameRate: 7
             
         };
