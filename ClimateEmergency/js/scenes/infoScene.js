@@ -81,6 +81,7 @@ var infoScene = new Phaser.Class({
             trashArray = [];
             timeLeft = 30;
             trashPickedUp = 0;
+            win = false;
             this.scene.start('menuScene');
         }, this);
         

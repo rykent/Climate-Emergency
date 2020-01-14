@@ -93,10 +93,9 @@ var pickupScene = new Phaser.Class({
     update: function (time, delta) {
 
       if(hiddenKey.isDown && hiddenKey2.isDown) {
-
-           this.smile.visible = true;
-           var democracy = new Audio('../ClimateEmergency/assets/smile.mp3');
-                        democracy.play();
+          this.smile.visible = true;
+          var democracy = new Audio('../ClimateEmergency/assets/smile.mp3');
+          democracy.play();
            
     }
 
