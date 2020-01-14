@@ -66,9 +66,9 @@ var pickupScene = new Phaser.Class({
 
         this.anims.create(playerConfig);
 
-        this.smile = this.add.sprite(320,380, 'smile');
+        /*this.smile = this.add.sprite(320,100, 'smile');
         this.smile.setScale(2);
-        this.smile.visible = false;
+        this.smile.visible = false; */
 
 
         this.player = this.add.sprite(320, 280, 'player');
@@ -85,17 +85,17 @@ var pickupScene = new Phaser.Class({
         this.cursors = this.input.keyboard.createCursorKeys();
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-        hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+        /* hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE); */
 
     },
 
     update: function (time, delta) {
 
-       if(hiddenKey.isDown) {
+      /* if(hiddenKey.isDown) {
        
            this.smile.visible = true;
            
-       }
+    } */
 
        if(this.cursors.up.isDown) {
 
