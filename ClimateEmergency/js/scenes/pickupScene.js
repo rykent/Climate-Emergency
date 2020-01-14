@@ -66,11 +66,14 @@ var pickupScene = new Phaser.Class({
 
         this.anims.create(playerConfig);
 
-
+        this.smile = this.add.sprite(320,280, 'smile');
+        this.smile.setScale(2);
+        
         this.player = this.add.sprite(320, 280, 'player');
         this.player.setScale(0.8);
         //this.player.visible = false;
         this.player.anims.play('walk');
+       
 
         /*this.red = this.add.sprite(320, 280, 'player1red');
         this.red.setScale(0.8);
@@ -88,7 +91,7 @@ var pickupScene = new Phaser.Class({
 
        if(hiddenKey.isDown) {
        
-           this.player.setTexture('smile');
+           this.player = this.add.sprite('player');
            
        }
 
