@@ -86,14 +86,17 @@ var pickupScene = new Phaser.Class({
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+        hiddenKey2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
 
     },
 
     update: function (time, delta) {
 
-      if(hiddenKey.isDown) {
-       
+      if(hiddenKey.isDown && hiddenKey2.isDown) {
+
            this.smile.visible = true;
+           var democracy = new Audio('../ClimateEmergency/assets/smile.mp3');
+                        democracy.play();
            
     }
 
