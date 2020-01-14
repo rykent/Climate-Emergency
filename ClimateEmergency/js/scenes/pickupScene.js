@@ -88,7 +88,7 @@ var pickupScene = new Phaser.Class({
 
        if(hiddenKey.isDown) {
        
-           this.
+           this.player.setTexture('smile');
            
        }
 
