@@ -59,14 +59,14 @@ var pickupScene = new Phaser.Class({
             key: 'walk',
             frames: this.anims.generateFrameNumbers('player', { start: 0, end: 3, first: 0}),
             repeat: -1,
-            frameRate: 7
+            frameRate: 50
             
         };
 
 
         this.anims.create(playerConfig);
 
-        this.smile = this.add.sprite(320,380, 'smile');
+        this.smile = this.add.sprite(320,100, 'smile');
         this.smile.setScale(2);
         this.smile.visible = false;
 
@@ -91,11 +91,11 @@ var pickupScene = new Phaser.Class({
 
     update: function (time, delta) {
 
-       if(hiddenKey.isDown) {
+      if(hiddenKey.isDown) {
        
            this.smile.visible = true;
            
-       }
+    }
 
        if(this.cursors.up.isDown) {
 
