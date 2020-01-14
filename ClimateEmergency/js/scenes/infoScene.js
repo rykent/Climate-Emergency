@@ -92,9 +92,17 @@ var infoScene = new Phaser.Class({
             this.again.visible = true;
             this.menu.visible = true;
         }, this);
+
+        button9 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.NINE);
+        button0 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ZERO);
+
     },
 
     update: function ()
     {
+        if(button9.isDown && button0.isDown) {
+        var bruh = new Audio('../ClimateEmergency/assets/bruh.mp3');
+                        bruh.play();
+        }
     }
 });
