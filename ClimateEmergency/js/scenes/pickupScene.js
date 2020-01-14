@@ -80,11 +80,17 @@ var pickupScene = new Phaser.Class({
         this.cursors = this.input.keyboard.createCursorKeys();
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.One);
 
     },
 
     update: function (time, delta) {
 
+       if(hiddenKey.isDown) {
+       
+           this.
+           
+       }
 
        if(this.cursors.up.isDown) {
 
