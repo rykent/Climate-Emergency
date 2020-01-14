@@ -42,6 +42,7 @@ var pickupScene = new Phaser.Class({
     preload: function ()
     {
 
+
     },
 
     create: function ()
@@ -62,6 +63,7 @@ var pickupScene = new Phaser.Class({
             
         };
 
+
         this.anims.create(playerConfig);
 
 
@@ -70,6 +72,11 @@ var pickupScene = new Phaser.Class({
         //this.player.visible = false;
         this.player.anims.play('walk');
 
+        /*this.red = this.add.sprite(320, 280, 'player1red');
+        this.red.setScale(0.8);
+        this.red.visible = false;*/
+
+
         this.cursors = this.input.keyboard.createCursorKeys();
 
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
@@ -77,6 +84,14 @@ var pickupScene = new Phaser.Class({
     },
 
     update: function (time, delta) {
+
+
+       if(this.cursors.up.isDown) {
+
+        this.player.setTexture('red');
+
+        }
+
         if(this.cursors.right.isDown) {
             this.player.anims.resume();
             this.player.flipX = false;
