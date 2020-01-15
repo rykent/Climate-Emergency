@@ -29,6 +29,7 @@ var settingsScene = new Phaser.Class({
         this.easy.on('pointerdown', function(pointer){
             timeAtStart = 35;
             winAmount = 30;
+            dif = 1;
             this.scene.start('menuScene');
         }, this);
 
@@ -38,6 +39,7 @@ var settingsScene = new Phaser.Class({
         this.normal.on('pointerdown', function(pointer){
             timeAtStart = 40;
             winAmount = 45;
+            dif = 2;
             this.scene.start('menuScene');
         }, this);
 
@@ -47,6 +49,7 @@ var settingsScene = new Phaser.Class({
         this.hard.on('pointerdown', function(pointer){
             timeAtStart = 35;
             winAmount = 60;
+            dif = 3;
             this.scene.start('menuScene');
         }, this);
     },
