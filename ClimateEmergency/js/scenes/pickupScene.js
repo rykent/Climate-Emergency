@@ -87,6 +87,7 @@ var pickupScene = new Phaser.Class({
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
         hiddenKey2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
+        bruhKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.EIGHT);
 
     },
 
@@ -126,6 +127,12 @@ var pickupScene = new Phaser.Class({
         } else {
             this.player.anims.pause(this.player.anims.currentAnim.frames[1]);
 
+        }
+
+        if (bruhKey.isDown) {
+
+                        var laugh = new Audio('../ClimateEmergency/assets/laugh.mp3');
+                        laugh.play();
         }
 
         if (pickupKey.isDown) {
