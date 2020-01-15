@@ -42,15 +42,10 @@ var pickupScene = new Phaser.Class({
     preload: function ()
     {
         
-        this.load.audio('laugh', 'assets/laugh.mp3');
     },
 
     create: function ()
     {
-
-        var laugh = this.sound.add('laugh');
-
-        laugh.play();
 
         this.background = this.add.sprite(-2000,0, 'bg_2');
         this.background.setOrigin(0,0);
