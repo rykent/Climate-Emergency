@@ -63,8 +63,16 @@ var pickupScene = new Phaser.Class({
             
         };
 
+       /* var redConfig = {
+            key: 'run',
+            frames: this.anims.generateFrameNumbers('red', { start: 0, end: 3, first: 0}),
+            repeat:-1,
+            frameRate: 7
+        }; */
+
 
         this.anims.create(playerConfig);
+        //this.anims.create(redConfig);
 
         this.smile = this.add.sprite(320,100, 'smile');
         this.smile.setScale(2);
@@ -73,21 +81,26 @@ var pickupScene = new Phaser.Class({
 
         this.player = this.add.sprite(320, 280, 'player');
         this.player.setScale(0.8);
-        //this.player.visible = false;
+        this.player.visible;
         this.player.anims.play('walk');
        
 
-        /*this.red = this.add.sprite(320, 280, 'player1red');
+        /* red cosmetic character
+        this.red = this.add.sprite(320, 280, 'red');
         this.red.setScale(0.8);
-        this.red.visible = false;*/
+        this.player.visible = false;
+        this.red.anims.play('run'); */
 
-
+        //defining keys
         this.cursors = this.input.keyboard.createCursorKeys();
-
         pickupKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         hiddenKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
         hiddenKey2 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.TWO);
         bruhKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.EIGHT);
+        redKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.FIVE);
+        blueKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SIX);
+        leftKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        rightKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
     },
 
@@ -100,13 +113,7 @@ var pickupScene = new Phaser.Class({
            
     }
 
-       if(this.cursors.up.isDown) {
-
-        this.player.setTexture('red');
-
-        }
-
-        if(this.cursors.right.isDown) {
+        if(this.cursors.right.isDown || rightKey.isDown) {
             this.player.anims.resume();
             this.player.flipX = false;
             if (this.player.x > -1800) {
@@ -115,7 +122,7 @@ var pickupScene = new Phaser.Class({
             for (var i = 0; i < 125; i++) {
                 trashArray[i].x -= 4;
             }
-        } else if (this.cursors.left.isDown) {
+        } else if (this.cursors.left.isDown || leftKey.isDown) {
             this.player.anims.resume();
             this.player.flipX = true;
             if (this.player.x > -1800) {
@@ -128,6 +135,7 @@ var pickupScene = new Phaser.Class({
             this.player.anims.pause(this.player.anims.currentAnim.frames[1]);
 
         }
+        
 
         if (bruhKey.isDown) {
 
